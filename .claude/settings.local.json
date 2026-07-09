@@ -1,0 +1,43 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Start-Process \"C:\\\\Users\\\\anifa\\\\kos-emotion-site\\\\index.html\")",
+      "Bash(awk '{print $5, $NF}')",
+      "Bash(command -v magick)",
+      "Bash(command -v convert)",
+      "Bash(command -v cwebp)",
+      "Bash(command -v mogrify)",
+      "Bash(npm -v)",
+      "Bash(where magick *)",
+      "Bash(where cwebp *)",
+      "Bash(where ffmpeg *)",
+      "Bash(where python *)",
+      "Bash(where python3 *)",
+      "Read(//c/Users/anifa/AppData/Local/Temp/claude/C--Users-anifa-Desktop-kos-emotion-site/06068657-2955-431a-9979-474779afb08b/scratchpad/imgtool/**)",
+      "Bash(node meta.js)",
+      "Bash(node optimize.js)",
+      "Bash(node -e ' *)",
+      "Bash(node meta2.js)",
+      "Bash(grep -viE \"\\\\.jpeg$|\\\\.jpg$\")",
+      "Bash(node logo-meta.js)",
+      "Bash(node crop-test.js)",
+      "Bash(node sample-colors.js)",
+      "Bash(node keyout.js)",
+      "Bash(node preview-cutout.js)",
+      "Bash(node build-favicon.js)",
+      "Bash(node optimize-cta.js)",
+      "Bash(grep -viE \"^[0-9]+\\\\.jpeg$\")",
+      "Skill(run)",
+      "Bash(command -v chromium-cli)",
+      "Bash(chromium-cli --help)",
+      "Bash(npm ls *)",
+      "Bash(where npx *)",
+      "Bash(npx --yes playwright --version)",
+      "Bash(npm install *)",
+      "Bash(node shot.js)",
+      "Bash(node crop-navlogo.js)",
+      "Bash(node make-navlogo.js)",
+      "Bash(node shot-nav.js)"
+    ]
+  }
+}
