@@ -72,7 +72,20 @@
   <div class="hero-content">
     <h1 class="hero-slogan">Feel the island flow</h1>
     <p class="hero-sub">Sunset e-bike rides through the hidden soul of Kos</p>
-    <a href="#book" class="btn btn-gold">Book your ride</a>
+
+    <a href="#reviews" class="hero-rating">
+      <span class="hero-rating-stars">★★★★★</span> 5.0 — Melanie, Germany
+    </a>
+
+    <ul class="hero-facts">
+      <li>€50 / person</li>
+      <li>~2 hours</li>
+      <li>Starts at sunset</li>
+    </ul>
+
+    <a href="https://wa.me/306942538751" target="_blank" rel="noopener" class="btn btn-gold">Book your ride</a>
+
+    <p class="hero-scarcity">Only 1 tour per day · small groups up to 6 guests</p>
   </div>
 </section>
 
@@ -255,6 +268,34 @@
   </div>
 </section>
 
+<section id="faq" class="faq">
+  <div class="section-inner reveal">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>What should I wear?</summary>
+        <p>Comfortable clothing and closed or flat shoes are best for cycling. Evenings by the sea can be breezy, so bring a light layer.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What happens if it rains?</summary>
+        <p>Your safety comes first. If the weather doesn't cooperate, we'll reschedule your tour to another available time or offer a full refund — whichever you prefer.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What is your cancellation policy?</summary>
+        <p>You can cancel free of charge up to 24 hours before your tour for a full refund.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is the tour insured?</summary>
+        <p>Yes, every tour is covered by liability insurance for your peace of mind.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do I need cycling experience?</summary>
+        <p>Not at all — our e-bikes make pedaling effortless, and the pace is relaxed and suitable for all fitness levels.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
 <section id="book" class="book">
   <div class="section-inner book-inner reveal">
     <h2 class="section-title">Book Your Ride</h2>
@@ -287,6 +328,8 @@
 <footer class="footer">
   <p>&copy; 2026 Kos E-Motion. Feel the island flow.</p>
 </footer>
+
+<a href="https://wa.me/306942538751" target="_blank" rel="noopener" id="stickyBook" class="sticky-book">Book Now</a>
 
 <script src="script.js"></script>
 
@@ -371,6 +414,8 @@
     banner.style.display = 'flex';
   }
 
+  if (window.updateStickyBook) window.updateStickyBook();
+
   var acceptBtn = document.getElementById('cookie-accept');
   var rejectBtn = document.getElementById('cookie-reject');
 
@@ -379,6 +424,7 @@
       localStorage.setItem(KEY, 'granted');
       applyConsent(true);
       banner.style.display = 'none';
+      if (window.updateStickyBook) window.updateStickyBook();
     });
   }
   if (rejectBtn) {
@@ -386,6 +432,7 @@
       localStorage.setItem(KEY, 'denied');
       applyConsent(false);
       banner.style.display = 'none';
+      if (window.updateStickyBook) window.updateStickyBook();
     });
   }
 })();

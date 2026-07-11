@@ -17,6 +17,29 @@ document.querySelectorAll('.nav-link').forEach(link => {
   });
 });
 
+function updateStickyBook() {
+  const stickyBook = document.getElementById('stickyBook');
+  if (!stickyBook) return;
+
+  const hero = document.querySelector('.hero');
+  if (hero) {
+    const heroBottom = hero.offsetTop + hero.offsetHeight;
+    stickyBook.classList.toggle('visible', window.scrollY > heroBottom - 200);
+  }
+
+  const cookieBanner = document.getElementById('cookie-banner');
+  if (cookieBanner && getComputedStyle(cookieBanner).display !== 'none') {
+    stickyBook.style.bottom = (cookieBanner.offsetHeight + 12) + 'px';
+  } else {
+    stickyBook.style.bottom = '';
+  }
+}
+
+window.updateStickyBook = updateStickyBook;
+window.addEventListener('scroll', updateStickyBook);
+window.addEventListener('resize', updateStickyBook);
+updateStickyBook();
+
 if ('IntersectionObserver' in window) {
   const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
