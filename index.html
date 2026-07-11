@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'wait_for_update': 500
+  });
+</script>
 <script>document.documentElement.classList.add('js-enabled');</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -274,5 +285,106 @@
 </footer>
 
 <script src="script.js"></script>
+
+<style>
+  #cookie-banner {
+    display: none;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 9999;
+    background: #1B3A5B;
+    color: #fff;
+    padding: 16px 24px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+    font-family: -apple-system, "Segoe UI", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    box-shadow: 0 -2px 14px rgba(0,0,0,0.25);
+  }
+  #cookie-banner p { margin: 0; max-width: 640px; }
+  #cookie-banner a { color: #D4A24E; text-decoration: underline; }
+  #cookie-banner .cookie-buttons { display: flex; gap: 10px; flex-shrink: 0; }
+  #cookie-accept, #cookie-reject {
+    padding: 9px 22px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: opacity 0.15s ease;
+  }
+  #cookie-accept:hover, #cookie-reject:hover { opacity: 0.85; }
+  #cookie-accept {
+    background: #D4A24E;
+    color: #1B3A5B;
+    font-weight: 600;
+    border: none;
+  }
+  #cookie-reject {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.6);
+  }
+  @media (max-width: 640px) {
+    #cookie-banner { flex-direction: column; align-items: flex-start; }
+    #cookie-banner .cookie-buttons { width: 100%; }
+    #cookie-accept, #cookie-reject { flex: 1; text-align: center; }
+  }
+</style>
+
+<div id="cookie-banner">
+  <p>
+    We use cookies to improve your experience on this site and understand how it's used.
+    You can accept all cookies or reject non-essential ones.
+  </p>
+  <div class="cookie-buttons">
+    <button id="cookie-reject">Reject</button>
+    <button id="cookie-accept">Accept</button>
+  </div>
+</div>
+
+<script>
+(function () {
+  var KEY = 'kosemotion_cookie_consent';
+  var banner = document.getElementById('cookie-banner');
+  var saved = localStorage.getItem(KEY);
+
+  function applyConsent(granted) {
+    if (typeof gtag === 'function') {
+      gtag('consent', 'update', {
+        'ad_storage': granted ? 'granted' : 'denied',
+        'ad_user_data': granted ? 'granted' : 'denied',
+        'ad_personalization': granted ? 'granted' : 'denied',
+        'analytics_storage': granted ? 'granted' : 'denied'
+      });
+    }
+  }
+
+  if (saved === 'granted' || saved === 'denied') {
+    applyConsent(saved === 'granted');
+  } else if (banner) {
+    banner.style.display = 'flex';
+  }
+
+  var acceptBtn = document.getElementById('cookie-accept');
+  var rejectBtn = document.getElementById('cookie-reject');
+
+  if (acceptBtn) {
+    acceptBtn.addEventListener('click', function () {
+      localStorage.setItem(KEY, 'granted');
+      applyConsent(true);
+      banner.style.display = 'none';
+    });
+  }
+  if (rejectBtn) {
+    rejectBtn.addEventListener('click', function () {
+      localStorage.setItem(KEY, 'denied');
+      applyConsent(false);
+      banner.style.display = 'none';
+    });
+  }
+})();
+</script>
 </body>
 </html>
