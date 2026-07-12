@@ -313,6 +313,54 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 12px 28px rgba(201, 162, 75, 0.55);
 }
 
+/* Choose Your Kos Adventure */
+.adventure { background: var(--sand); }
+
+.adventure-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.adventure-card {
+  background: #fff;
+  padding: 36px 24px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  transition: transform 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.adventure-card:hover { transform: translateY(-6px); }
+
+.adventure-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--dark);
+}
+
+.adventure-price {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: #D4A24E;
+  font-size: 1.15rem;
+}
+
+.adventure-desc {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.adventure-card .btn {
+  margin-top: 0;
+  align-self: center;
+}
+
 /* Experience / Route */
 .experience { background: var(--cream); }
 
@@ -908,6 +956,7 @@ html.js-enabled .reveal.in-view {
   .gallery-item-wide { grid-column: span 2; }
   .gallery-item-tall { grid-row: span 2; }
   .testimonials-grid { grid-template-columns: 1fr; }
+  .adventure-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 640px) {
