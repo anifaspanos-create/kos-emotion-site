@@ -361,6 +361,28 @@ img { max-width: 100%; display: block; }
   align-self: center;
 }
 
+.adventure-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.adventure-gallery-item {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  aspect-ratio: 4 / 3;
+}
+
+.adventure-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.adventure-gallery-item:hover img { transform: scale(1.06); }
+
 /* Experience / Route */
 .experience { background: var(--cream); }
 
