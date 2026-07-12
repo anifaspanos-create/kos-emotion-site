@@ -491,6 +491,43 @@ img { max-width: 100%; display: block; }
   vertical-align: middle;
 }
 
+.route-cta {
+  max-width: 720px;
+  margin: 56px auto 0;
+  background: #1B3A5B;
+  border-radius: 14px;
+  padding: 36px 32px;
+  text-align: center;
+}
+
+.route-cta p {
+  color: #fff;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.route-cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.route-cta-buttons .btn { margin-top: 0; }
+
+.btn-outline {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #D4A24E;
+}
+
+.btn-outline:hover {
+  background: #D4A24E;
+  color: #1B3A5B;
+  transform: translateY(-3px);
+}
+
 /* Included */
 .included { background: var(--sand); }
 
@@ -1010,6 +1047,9 @@ html.js-enabled .reveal.in-view {
   .about-image { aspect-ratio: 16/10; }
 
   .route-item { gap: 16px; }
+
+  .route-cta { margin-top: 40px; padding: 28px 20px; }
+  .route-cta-buttons { flex-direction: column; align-items: stretch; }
 
   .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 260px; }
   .gallery-item-wide { grid-column: span 1; }
