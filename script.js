@@ -40,6 +40,23 @@ window.addEventListener('scroll', updateStickyBook);
 window.addEventListener('resize', updateStickyBook);
 updateStickyBook();
 
+document.querySelectorAll('[data-carousel]').forEach(carousel => {
+  const track = carousel.querySelector('[data-carousel-track]');
+  const prevBtn = carousel.querySelector('[data-carousel-prev]');
+  const nextBtn = carousel.querySelector('[data-carousel-next]');
+  if (!track || !prevBtn || !nextBtn) return;
+
+  function scrollByOneSlide(direction) {
+    const slide = track.querySelector('.carousel-slide');
+    if (!slide) return;
+    const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap) || 0;
+    track.scrollBy({ left: direction * (slide.getBoundingClientRect().width + gap), behavior: 'smooth' });
+  }
+
+  prevBtn.addEventListener('click', () => scrollByOneSlide(-1));
+  nextBtn.addEventListener('click', () => scrollByOneSlide(1));
+});
+
 if ('IntersectionObserver' in window) {
   const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
