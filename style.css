@@ -25,6 +25,8 @@ body {
 
 img { max-width: 100%; display: block; }
 
+section[id] { scroll-margin-top: 90px; }
+
 .section-inner {
   max-width: 1200px;
   margin: 0 auto;
@@ -185,7 +187,9 @@ img { max-width: 100%; display: block; }
 /* Hero */
 .hero {
   position: relative;
+  background: #0d1729;
   height: 100vh;
+  height: 100svh;
   min-height: 560px;
   display: flex;
   align-items: center;
@@ -297,41 +301,16 @@ img { max-width: 100%; display: block; }
   font-size: 1.15rem;
 }
 
-.adventure-rating {
-  display: inline-flex;
-  align-self: center;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 16px;
-  background: var(--sand);
-  border: 1px solid rgba(212, 162, 78, 0.4);
-  border-radius: 30px;
-  color: #1B3A5B;
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: background 0.25s ease;
-}
-
-.adventure-rating:hover { background: #fff; }
-
-.adventure-rating-stars {
-  color: #D4A24E;
-  letter-spacing: 2px;
-}
-
 .adventure-facts {
-  list-style: none;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 6px 14px;
-  padding: 0;
 }
 
-.adventure-facts li {
-  display: flex;
+.adventure-facts span {
+  display: inline-flex;
   align-items: center;
   gap: 6px;
   font-family: var(--font-heading);
@@ -340,12 +319,20 @@ img { max-width: 100%; display: block; }
   color: #1B3A5B;
 }
 
-.adventure-facts li:not(:first-child)::before {
+.adventure-facts span:not(:first-child)::before {
   content: '·';
   color: #D4A24E;
 }
 
-.adventure-scarcity {
+.adventure-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.adventure-scarcity,
+.adventure-trust,
+.adventure-meeting {
   font-size: 0.78rem;
   color: #1B3A5B;
   opacity: 0.65;
@@ -639,66 +626,6 @@ img { max-width: 100%; display: block; }
   padding-left: 24px;
 }
 
-/* Testimonials */
-.testimonials {
-  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
-}
-
-.testimonials .section-title { color: #fff; }
-
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
-  margin-top: 8px;
-}
-
-.testimonial-card {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(201, 162, 75, 0.28);
-  border-radius: 14px;
-  padding: 40px 36px;
-  position: relative;
-  overflow: hidden;
-}
-
-.testimonial-card::before {
-  content: '\201C';
-  font-family: var(--font-heading);
-  font-size: 5rem;
-  color: var(--gold);
-  position: absolute;
-  top: -6px;
-  left: 20px;
-  opacity: 0.35;
-  line-height: 1;
-}
-
-.stars {
-  color: var(--gold-light);
-  letter-spacing: 4px;
-  font-size: 0.95rem;
-  margin-bottom: 18px;
-  position: relative;
-}
-
-.testimonial-text {
-  font-family: var(--font-heading);
-  font-size: 1.25rem;
-  font-style: italic;
-  line-height: 1.6;
-  color: #f0e9d8;
-  margin-bottom: 22px;
-  position: relative;
-}
-
-.testimonial-author {
-  font-size: 0.88rem;
-  letter-spacing: 0.5px;
-  color: var(--gold-light);
-  font-weight: 600;
-}
-
 /* FAQ */
 .faq { background: var(--sand); }
 
@@ -886,6 +813,12 @@ html.js-enabled .reveal.in-view {
 }
 
 .wa-icon { font-size: 1.2rem; }
+
+.book-reassurance {
+  margin-top: 14px;
+  font-size: 0.85rem;
+  color: #ccc;
+}
 
 .social-icons {
   margin-top: 40px;
@@ -1076,12 +1009,11 @@ html.js-enabled .reveal.in-view {
   .about-text .section-title { text-align: center; }
   .about-quote { text-align: left; }
   .included-grid { grid-template-columns: repeat(2, 1fr); }
-  .testimonials-grid { grid-template-columns: 1fr; }
   .adventure-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 640px) {
-  .section-inner { padding: 72px 20px; }
+  .section-inner { padding: 72px 20px 132px; }
   .section-title { font-size: 2.1rem; }
 
   .nav-toggle { display: flex; }
@@ -1143,7 +1075,6 @@ html.js-enabled .reveal.in-view {
   .rentals-price-cta .rentals-book { width: 100%; }
 
   .trip-facts li { font-size: 0.95rem; padding: 0 12px; }
-  .testimonial-card { padding: 32px 24px; }
 
   .faq-item { padding: 18px 20px; }
   .faq-item summary { font-size: 1.05rem; }
