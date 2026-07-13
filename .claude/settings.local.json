@@ -37,7 +37,26 @@
       "Bash(node shot.js)",
       "Bash(node crop-navlogo.js)",
       "Bash(node make-navlogo.js)",
-      "Bash(node shot-nav.js)"
+      "Bash(node shot-nav.js)",
+      "Bash(git push *)",
+      "Bash(git add *)",
+      "Bash(git restore *)",
+      "Bash(git commit *)",
+      "Bash(nohup python -m http.server 8123)",
+      "Bash(echo \"PID:$!\")",
+      "Bash(curl -sv http://localhost:8123/)",
+      "Bash(py --version)",
+      "Bash(npx --version)",
+      "Bash(timeout 30 bash -c 'until curl -sf http://localhost:8123/ >/dev/null; do sleep 1; done')",
+      "Bash(curl -s http://localhost:8123/)",
+      "Bash(curl -o /dev/null -s -w \"%{http_code}\\\\n\" http://localhost:8123/)",
+      "Bash(npx --yes playwright install chromium)",
+      "Bash(mkdir -p 'C:\\\\Users\\\\anifa\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-anifa-Desktop-kos-emotion-site\\\\dd17b9bf-52fd-4a1c-ae4c-9d06078be6da\\\\scratchpad/pw')",
+      "Bash(npm init *)",
+      "Bash(node check.js)",
+      "Bash(pkill -f \"serve -l 8123\")",
+      "Bash(pkill -f \"npx --yes serve\")",
+      "Bash(node herofix.js)"
     ]
   }
 }
