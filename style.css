@@ -778,6 +778,8 @@ html.js-enabled .reveal.in-view {
   align-items: center;
   justify-content: center;
   transition: background 0.2s ease, transform 0.2s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .carousel-arrow:hover {
@@ -898,13 +900,13 @@ html.js-enabled .reveal.in-view {
 }
 
 .carousel-arrow-sm {
-  width: 26px;
-  height: 26px;
-  font-size: 1rem;
+  width: 44px;
+  height: 44px;
+  font-size: 1.3rem;
 }
 
-.carousel-arrow-sm.carousel-arrow-prev { left: 2px; }
-.carousel-arrow-sm.carousel-arrow-next { right: 2px; }
+.carousel-arrow-sm.carousel-arrow-prev { left: 4px; }
+.carousel-arrow-sm.carousel-arrow-next { right: 4px; }
 
 .rentals-info {
   flex: 1;
@@ -1069,7 +1071,6 @@ html.js-enabled .reveal.in-view {
     height: 140px;
     margin: 0 auto;
   }
-  .carousel-arrow-sm { width: 34px; height: 34px; font-size: 1.15rem; }
   .rentals-info { text-align: center; }
   .rentals-price-cta { flex-direction: column; gap: 12px; }
   .rentals-price-cta .rentals-book { width: 100%; }
