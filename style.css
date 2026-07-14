@@ -233,12 +233,41 @@ section[id] { scroll-margin-top: 90px; }
   text-shadow: 0 4px 20px rgba(0,0,0,0.4);
 }
 
+html.js-enabled .hero-slogan {
+  clip-path: inset(0 100% 0 0);
+  animation: hero-typewriter 1.3s steps(20, end) 0.1s both;
+}
+
 .hero-sub {
   margin-top: 16px;
   font-size: clamp(1rem, 2vw, 1.25rem);
   font-weight: 300;
   color: #f0e9d8;
   text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+
+html.js-enabled .hero-sub {
+  opacity: 0;
+  animation: hero-sub-fade 0.8s ease 1.5s both;
+}
+
+@keyframes hero-typewriter {
+  to { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes hero-sub-fade {
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js-enabled .hero-slogan {
+    clip-path: none;
+    animation: none;
+  }
+  html.js-enabled .hero-sub {
+    opacity: 1;
+    animation: none;
+  }
 }
 
 .btn {
