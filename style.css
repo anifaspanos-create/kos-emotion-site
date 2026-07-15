@@ -13,6 +13,11 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* Global list reset: no <ul> should show native bullets/markers by default.
+   Sections that intentionally want bullets/icons (FAQ, What's Included) add
+   their own visual marker explicitly rather than relying on the browser default. */
+ul { list-style: none; }
+
 html { scroll-behavior: smooth; }
 
 body {
