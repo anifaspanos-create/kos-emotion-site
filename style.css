@@ -1,8 +1,8 @@
 :root {
-  --gold: #c9a24b;
+  --gold: #d4a24e;
   --gold-light: #e3c988;
   --dark: #1c1c1c;
-  --navy: #14213d;
+  --navy: #1b3a5b;
   --navy-deep: #0d1729;
   --ink: #2b2b2b;
   --cream: #faf6ee;
@@ -17,6 +17,10 @@
    Sections that intentionally want bullets/icons (FAQ, What's Included) add
    their own visual marker explicitly rather than relying on the browser default. */
 ul { list-style: none; }
+
+/* Global heading typography: every heading is serif by default. Body copy
+   stays on the sans-serif font inherited from <body>. */
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); }
 
 html { scroll-behavior: smooth; }
 
@@ -133,7 +137,7 @@ section[id] { scroll-margin-top: 90px; }
   font-size: 0.72rem;
   font-weight: 300;
   font-style: italic;
-  color: #D4A24E;
+  color: var(--gold);
   letter-spacing: 0.3px;
 }
 
@@ -153,7 +157,7 @@ section[id] { scroll-margin-top: 90px; }
   transition: color 0.25s ease;
 }
 
-.nav-link:hover { color: #D4A24E; }
+.nav-link:hover { color: var(--gold); }
 
 .nav-link::after {
   content: '';
@@ -162,7 +166,7 @@ section[id] { scroll-margin-top: 90px; }
   bottom: 0;
   width: 0;
   height: 1px;
-  background: #D4A24E;
+  background: var(--gold);
   transition: width 0.25s ease;
 }
 
@@ -192,7 +196,7 @@ section[id] { scroll-margin-top: 90px; }
 /* Hero */
 .hero {
   position: relative;
-  background: #0d1729;
+  background: var(--navy-deep);
   height: 100vh;
   height: 100svh;
   min-height: 560px;
@@ -290,7 +294,7 @@ html.js-enabled .hero-sub {
 
 .btn-gold {
   background: linear-gradient(135deg, var(--gold-light), var(--gold));
-  color: #1c1c1c;
+  color: var(--dark);
   box-shadow: 0 8px 24px rgba(201, 162, 75, 0.4);
 }
 
@@ -329,10 +333,9 @@ html.js-enabled .hero-sub {
 }
 
 .adventure-price {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  color: #D4A24E;
-  font-size: 1.15rem;
+  font-family: var(--font-body);
+  color: var(--navy);
+  font-size: 0.95rem;
 }
 
 .adventure-facts {
@@ -350,12 +353,12 @@ html.js-enabled .hero-sub {
   font-family: var(--font-heading);
   font-size: 0.95rem;
   font-weight: 600;
-  color: #1B3A5B;
+  color: var(--navy);
 }
 
 .adventure-facts span:not(:first-child)::before {
   content: '·';
-  color: #D4A24E;
+  color: var(--gold);
 }
 
 .adventure-meta {
@@ -368,7 +371,7 @@ html.js-enabled .hero-sub {
 .adventure-trust,
 .adventure-meeting {
   font-size: 0.78rem;
-  color: #1B3A5B;
+  color: var(--navy);
   opacity: 0.65;
 }
 
@@ -435,7 +438,7 @@ html.js-enabled .hero-sub {
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #1c1c1c;
+  color: var(--dark);
   background: linear-gradient(135deg, var(--gold-light), var(--gold));
   padding: 4px 12px;
   border-radius: 20px;
@@ -447,19 +450,32 @@ html.js-enabled .hero-sub {
   color: var(--dark);
 }
 
-.package-price {
+/* Unified price display — used by package-price, adventure-price (rentals
+   teaser) and rentals-price so every price on the site reads the same way:
+   a bold serif amount in gold, a smaller sans-serif unit, and a gold "·"
+   separator when a card lists more than one price. */
+.price-amount {
   font-family: var(--font-heading);
   font-weight: 700;
-  color: #D4A24E;
-  font-size: 1.35rem;
+  font-size: 1.25rem;
+  color: var(--gold);
 }
 
-.package-price span {
+.price-unit {
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: 0.85rem;
-  color: #1B3A5B;
+  font-size: 0.8rem;
+  color: var(--navy);
+  margin-left: 3px;
 }
+
+.price-sep {
+  color: var(--gold);
+  font-weight: 600;
+  margin: 0 6px;
+}
+
+.package-price { display: flex; align-items: baseline; }
 
 .package-includes {
   display: flex;
@@ -493,7 +509,7 @@ html.js-enabled .hero-sub {
 
 .package-note {
   font-size: 0.8rem;
-  color: #1B3A5B;
+  color: var(--navy);
   opacity: 0.7;
   text-align: center;
 }
@@ -626,7 +642,7 @@ html.js-enabled .hero-sub {
 .route-cta {
   max-width: 720px;
   margin: 56px auto 0;
-  background: #1B3A5B;
+  background: var(--navy);
   border-radius: 14px;
   padding: 36px 32px;
   text-align: center;
@@ -651,23 +667,23 @@ html.js-enabled .hero-sub {
 .btn-outline {
   background: transparent;
   color: #fff;
-  border: 2px solid #D4A24E;
+  border: 2px solid var(--gold);
 }
 
 .btn-outline:hover {
-  background: #D4A24E;
-  color: #1B3A5B;
+  background: var(--gold);
+  color: var(--navy);
   transform: translateY(-3px);
 }
 
 .btn-outline-navy {
   background: transparent;
-  color: #1B3A5B;
-  border: 2px solid #1B3A5B;
+  color: var(--navy);
+  border: 2px solid var(--navy);
 }
 
 .btn-outline-navy:hover {
-  background: #1B3A5B;
+  background: var(--navy);
   color: #fff;
   transform: translateY(-3px);
 }
@@ -759,6 +775,34 @@ html.js-enabled .hero-sub {
 /* FAQ */
 .faq { background: var(--sand); }
 
+.faq-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 36px;
+}
+
+.faq-tab {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.92rem;
+  letter-spacing: 0.3px;
+  padding: 11px 30px;
+  border-radius: 50px;
+  border: 2px solid var(--navy);
+  background: transparent;
+  color: var(--navy);
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.faq-tab:hover { transform: translateY(-2px); }
+
+.faq-tab.active {
+  background: var(--navy);
+  color: #fff;
+}
+
 .faq-list {
   max-width: 760px;
   margin: 0 auto;
@@ -813,8 +857,8 @@ html.js-enabled .hero-sub {
   right: 24px;
   bottom: 24px;
   z-index: 1400;
-  background: #D4A24E;
-  color: #1B3A5B;
+  background: var(--gold);
+  color: var(--navy);
   font-family: var(--font-body);
   font-weight: 600;
   font-size: 0.95rem;
@@ -913,7 +957,7 @@ html.js-enabled .reveal.in-view {
 }
 
 .carousel-arrow:hover {
-  background: #1B3A5B;
+  background: var(--navy);
   transform: translateY(-50%) scale(1.06);
 }
 
@@ -982,8 +1026,8 @@ html.js-enabled .reveal.in-view {
   border-top: 1px solid rgba(27, 58, 91, 0.1);
 }
 
-.rentals .section-title { color: #1B3A5B; }
-.rentals .section-text { color: #1B3A5B; opacity: 0.7; }
+.rentals .section-title { color: var(--navy); }
+.rentals .section-text { color: var(--navy); opacity: 0.7; }
 
 .rentals-list {
   max-width: 640px;
@@ -1046,8 +1090,8 @@ html.js-enabled .reveal.in-view {
 .rentals-item {
   font-family: var(--font-heading);
   font-weight: 700;
-  color: #1B3A5B;
-  font-size: 1.15rem;
+  color: var(--navy);
+  font-size: 1.25rem;
   margin-bottom: 10px;
 }
 
@@ -1060,10 +1104,9 @@ html.js-enabled .reveal.in-view {
 }
 
 .rentals-price {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  color: #D4A24E;
-  font-size: 1.05rem;
+  display: inline-flex;
+  align-items: baseline;
+  flex-wrap: wrap;
   white-space: nowrap;
 }
 
@@ -1081,7 +1124,7 @@ html.js-enabled .reveal.in-view {
   margin: 0 auto 40px;
   text-align: center;
   font-size: 0.85rem;
-  color: #1B3A5B;
+  color: var(--navy);
   opacity: 0.6;
   font-style: italic;
 }
@@ -1099,7 +1142,7 @@ html.js-enabled .reveal.in-view {
   display: block;
   width: fit-content;
   margin: 0 auto;
-  background: #1B3A5B;
+  background: var(--navy);
   color: #fff;
 }
 
@@ -1209,6 +1252,9 @@ html.js-enabled .reveal.in-view {
   .rentals-price-cta .rentals-book { width: 100%; }
 
   .trip-facts li { font-size: 0.95rem; padding: 0 12px; }
+
+  .faq-tabs { gap: 8px; margin-bottom: 28px; }
+  .faq-tab { padding: 10px 20px; font-size: 0.85rem; }
 
   .faq-item { padding: 18px 20px; }
   .faq-item summary { font-size: 1.05rem; }

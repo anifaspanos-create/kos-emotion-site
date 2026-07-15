@@ -98,7 +98,7 @@
           <div class="package package-featured">
             <span class="package-badge">Guests' Favourite</span>
             <h4 class="package-name">Full Experience</h4>
-            <p class="package-price">€50 <span>/ person</span></p>
+            <p class="package-price"><span class="price-amount">€50</span><span class="price-unit">/ person</span></p>
             <ul class="package-includes">
               <li>Premium e-bike</li>
               <li>Helmet</li>
@@ -113,7 +113,7 @@
 
           <div class="package">
             <h4 class="package-name">Essential</h4>
-            <p class="package-price">€35 <span>/ person</span></p>
+            <p class="package-price"><span class="price-amount">€35</span><span class="price-unit">/ person</span></p>
             <ul class="package-includes">
               <li>Premium e-bike</li>
               <li>Helmet</li>
@@ -140,7 +140,7 @@
 
       <div class="adventure-card">
         <h3>Bike Rentals</h3>
-        <p class="adventure-price">From €25 / week</p>
+        <p class="adventure-price">From <span class="price-amount">€25</span><span class="price-unit">/ week</span></p>
         <p class="adventure-desc">Explore Kos at your own pace. Delivered to your accommodation.</p>
         <div class="adventure-gallery">
           <div class="adventure-gallery-item">
@@ -233,7 +233,7 @@
       <p>Love this route? Book the full guided experience from €35, or get the Self-Guided Sunset Route map and explore it yourself.</p>
       <div class="route-cta-buttons">
         <a href="https://wa.me/306942538751" target="_blank" rel="noopener" class="btn btn-gold">Book the Tour</a>
-        <a href="https://wa.me/306942538751?text=Hi%21%20I%27d%20like%20to%20get%20the%20Self-Guided%20Sunset%20Route%20map" target="_blank" rel="noopener" class="btn btn-outline">Get the Route – €7</a>
+        <a href="https://wa.me/306942538751?text=Hi%21%20I%27d%20like%20to%20get%20the%20Self-Guided%20Sunset%20Route%20map" target="_blank" rel="noopener" class="btn btn-outline">Get the Route Only — €7</a>
       </div>
     </div>
   </div>
@@ -335,7 +335,7 @@
         <div class="rentals-info">
           <h3 class="rentals-item">Standard Bike</h3>
           <div class="rentals-price-cta">
-            <span class="rentals-price">€4 / day · €25 / week</span>
+            <span class="rentals-price"><span class="price-amount">€4</span><span class="price-unit">/ day</span><span class="price-sep">·</span><span class="price-amount">€25</span><span class="price-unit">/ week</span></span>
             <a href="https://wa.me/306942538751" target="_blank" rel="noopener" class="btn btn-rentals rentals-book">Book Now</a>
           </div>
         </div>
@@ -357,7 +357,7 @@
         <div class="rentals-info">
           <h3 class="rentals-item">E-Bike (60km range)</h3>
           <div class="rentals-price-cta">
-            <span class="rentals-price">€15 / day · €90 / week</span>
+            <span class="rentals-price"><span class="price-amount">€15</span><span class="price-unit">/ day</span><span class="price-sep">·</span><span class="price-amount">€90</span><span class="price-unit">/ week</span></span>
             <a href="https://wa.me/306942538751" target="_blank" rel="noopener" class="btn btn-rentals rentals-book">Book Now</a>
           </div>
         </div>
@@ -378,13 +378,9 @@
     <div class="about-text">
       <h2 class="section-title">About</h2>
       <p class="about-quote">
-        "I'm Panagiotis, born and raised in Kos. Long before I became a tour host, this
-        coastline was where I came to clear my head — the same salt flats, the same
-        wetlands, the same sunset. A few years ago I decided to share it properly: not a
-        scripted tour, but the real route I still ride myself, at the pace the island
-        deserves. I run every tour myself, in English, with a small group so it stays
-        personal. If you book with me, you're not booking a company — you're spending an
-        evening with someone who calls this island home."
+        "I'm Panagiotis, born and raised in Kos. I still ride this same route myself, in
+        English, with a small group — because for me, it's not a job, it's my island.
+        Book with me, and you're spending an evening with a local, not a company."
       </p>
     </div>
   </div>
@@ -393,7 +389,13 @@
 <section id="faq" class="faq">
   <div class="section-inner reveal">
     <h2 class="section-title">Frequently Asked Questions</h2>
-    <div class="faq-list">
+
+    <div class="faq-tabs" role="tablist">
+      <button type="button" class="faq-tab active" id="faq-tab-tour" data-faq-tab="tour" role="tab" aria-selected="true" aria-controls="faq-panel-tour">Tour FAQ</button>
+      <button type="button" class="faq-tab" id="faq-tab-rentals" data-faq-tab="rentals" role="tab" aria-selected="false" aria-controls="faq-panel-rentals">Rental FAQ</button>
+    </div>
+
+    <div class="faq-list" id="faq-panel-tour" data-faq-panel="tour" role="tabpanel" aria-labelledby="faq-tab-tour">
       <details class="faq-item">
         <summary>What should I wear?</summary>
         <p>Comfortable clothing and closed or flat shoes are best for cycling. Evenings by the sea can be breezy, so bring a light layer.</p>
@@ -413,6 +415,21 @@
       <details class="faq-item">
         <summary>Do I need cycling experience?</summary>
         <p>Not at all — our e-bikes make pedaling effortless, and the pace is relaxed and suitable for all fitness levels.</p>
+      </details>
+    </div>
+
+    <div class="faq-list" id="faq-panel-rentals" data-faq-panel="rentals" role="tabpanel" aria-labelledby="faq-tab-rentals" hidden>
+      <details class="faq-item">
+        <summary>What if the bike breaks down or I get a flat tire?</summary>
+        <p>Just call us — we'll get you back on the road or swap your bike as quickly as possible.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is a helmet included?</summary>
+        <p>Yes, every rental includes a helmet.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is there a minimum age to rent?</summary>
+        <p>There's no strict age limit — just make sure a responsible adult is with younger riders.</p>
       </details>
     </div>
   </div>

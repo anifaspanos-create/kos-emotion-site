@@ -57,6 +57,23 @@ document.querySelectorAll('[data-carousel]').forEach(carousel => {
   nextBtn.addEventListener('click', () => scrollByOneSlide(1));
 });
 
+const faqTabs = document.querySelectorAll('[data-faq-tab]');
+const faqPanels = document.querySelectorAll('[data-faq-panel]');
+
+faqTabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    const target = tab.dataset.faqTab;
+    faqTabs.forEach(t => {
+      const active = t === tab;
+      t.classList.toggle('active', active);
+      t.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
+    faqPanels.forEach(panel => {
+      panel.hidden = panel.dataset.faqPanel !== target;
+    });
+  });
+});
+
 if ('IntersectionObserver' in window) {
   const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
