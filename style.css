@@ -1260,6 +1260,12 @@ html.js-enabled .reveal.in-view {
   margin-bottom: 10px;
 }
 
+.rentals-desc {
+  color: #666;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+}
+
 .rentals-price-cta {
   display: flex;
   align-items: center;
