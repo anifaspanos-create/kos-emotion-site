@@ -8,6 +8,7 @@
   --cream: #faf6ee;
   --sand: #f2ead9;
   --muted: #6b6b6b;
+  --accent: var(--gold);
   --font-heading: 'Fraunces', Georgia, serif;
   --font-body: 'Inter', system-ui, sans-serif;
 }
@@ -718,47 +719,52 @@ html.js-enabled .hero-sub {
 .included-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  align-items: stretch;
   gap: 32px;
 }
 
 .included-card {
   background: #fff;
-  padding: 36px 24px;
+  padding: 40px 28px;
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 6px 20px rgba(0,0,0,0.05);
   transition: transform 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
 }
 
 .included-card:hover { transform: translateY(-6px); }
 
-.icon-placeholder {
-  font-size: 2.2rem;
-  margin-bottom: 16px;
+.icon-badge {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--sand);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon-badge svg {
+  width: 40px;
+  height: 40px;
 }
 
 .included-card h3 {
   font-family: var(--font-heading);
   font-size: clamp(1.2rem, 2.5vw, 1.5rem);
-  margin-bottom: 10px;
   color: var(--dark);
 }
 
 .included-card p {
   color: #666;
   font-size: 0.92rem;
-}
-
-.included-list {
-  list-style: none;
-  color: #666;
-  font-size: 0.92rem;
-  padding: 0;
-  margin: 0;
-}
-
-.included-list li:not(:last-child) {
-  margin-bottom: 4px;
 }
 
 /* About */
@@ -1245,11 +1251,12 @@ html.js-enabled .reveal.in-view {
   .package-grid { grid-template-columns: 1fr; gap: 24px; }
   .package-badge { top: -12px; }
 
-  .included-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
-  .included-card { padding: 20px 14px; }
-  .icon-placeholder { font-size: 1.7rem; margin-bottom: 10px; }
-  .included-card h3 { font-size: 0.98rem; margin-bottom: 6px; }
-  .included-card p, .included-list { font-size: 0.78rem; }
+  .included-grid { grid-template-columns: 1fr; gap: 14px; }
+  .included-card { padding: 24px 20px; gap: 10px; }
+  .icon-badge { width: 56px; height: 56px; }
+  .icon-badge svg { width: 32px; height: 32px; }
+  .included-card h3 { font-size: 0.98rem; }
+  .included-card p { font-size: 0.85rem; }
 
   .about-image { aspect-ratio: 16/10; }
 

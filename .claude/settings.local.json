@@ -56,7 +56,17 @@
       "Bash(node check.js)",
       "Bash(pkill -f \"serve -l 8123\")",
       "Bash(pkill -f \"npx --yes serve\")",
-      "Bash(node herofix.js)"
+      "Bash(node herofix.js)",
+      "Bash(node \"C:\\\\Users\\\\anifa\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-anifa-Desktop-kos-emotion-site\\\\96acdd5c-adfc-4e99-84c1-e80ce06e19a7\\\\scratchpad\\\\diagnose.js\")",
+      "Bash(cp \"C:\\\\Users\\\\anifa\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-anifa-Desktop-kos-emotion-site\\\\96acdd5c-adfc-4e99-84c1-e80ce06e19a7\\\\scratchpad\\\\diagnose.js\" ./diagnose.js)",
+      "Bash(node diagnose.js)",
+      "Bash(npx playwright *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:8791/index.html)",
+      "PowerShell(Get-Command *)",
+      "Read(//tmp/**)",
+      "Bash(curl -sv http://localhost:8123)",
+      "Bash(npx --no-install playwright --version)",
+      "Bash(npx --no-install puppeteer --version)"
     ]
   }
 }
