@@ -1332,6 +1332,28 @@ html.js-enabled .reveal.in-view {
   align-items: baseline;
   flex-wrap: wrap;
   white-space: nowrap;
+  gap: 6px;
+}
+
+.price--was .price__amount {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: line-through;
+}
+
+.rentals-save {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--dark);
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  padding: 3px 9px;
+  border-radius: 20px;
+  white-space: nowrap;
 }
 
 .rentals-price-cta .rentals-book {
