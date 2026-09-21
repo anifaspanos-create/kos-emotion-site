@@ -470,6 +470,11 @@ html.js-enabled .hero-chips {
   margin-top: 8px;
 }
 
+.package-grid--single {
+  grid-template-columns: minmax(0, 320px);
+  justify-content: center;
+}
+
 .package {
   position: relative;
   display: flex;
