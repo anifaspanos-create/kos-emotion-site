@@ -1,6 +1,8 @@
-# GetKosWay
+# Kos E-Motion site (owner also runs GetKosWay)
 
-Static site for GetKosWay (Kos rentals: e-bikes, bikes, scooters, cars, boats, tours): `index.html`, `style.css`, `script.js`.
+Static site for **Kos E-Motion** (kosemotion.com — guided sunset e-bike tours and bike rentals): `index.html`, `style.css`, `script.js`.
+
+This is **not** the GetKosWay website. GetKosWay's site is getkosway.com, in the repo `anifaspanos-create/KOSWAY`. When the owner talks about "the site" in the context of GetKosWay, its goals or bookings, they mean getkosway.com.
 
 ## Notion
 
